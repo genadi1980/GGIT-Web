@@ -1,0 +1,367 @@
+/* ==========================================================================
+   ggit.ai - Premium Medical Light Mode Aesthetic
+   ========================================================================== */
+
+:root {
+    --bg-dark: #f8fafc;        /* Clean, ultra-bright clinical light background */
+    --bg-card: #ffffff;        /* Pure white cards that stand out on the off-white background */
+    --accent-blue: #2563eb;    /* Deep trust blue for premium branding and focus elements */
+    --text-main: #0f172a;      /* Dark slate gray for razor-sharp readability */
+    --text-muted: #475569;     /* Medium slate gray for secondary descriptions */
+    --medical-teal: #6366f1;   /* Sleek, premium blue-purple (Indigo) */
+    --border-clean: #e2e8f0;   /* Light gray separation lines for grid definition */
+}
+
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.text-center { text-align: center; }
+.hidden { display: none; }
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+
+header {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.94)), 
+                      url('https://freepik.com');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-clean);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 4px;
+    border: 1px solid var(--border-clean);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-logo:hover {
+    transform: scale(1.04) rotate(2deg);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-right: 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover { color: var(--accent-blue); }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--medical-teal);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+}
+
+.btn-primary:hover { 
+    background-color: #4f46e5; /* A slightly darker blue-purple for the hover state */
+    transform: translateY(-1px); /* Adds a subtle, premium lift effect */
+}
+
+
+.btn-secondary {
+    background-color: #ffffff;
+    border: 1px solid var(--border-clean);
+    color: var(--text-main);
+    margin-left: 1rem;
+}
+
+.btn-secondary:hover { background-color: #f1f5f9; }
+
+/* ==========================================================================
+   🚀 CORRECTED HERO SECTION
+   ========================================================================== */
+
+/* ==========================================================================
+   🚀 CORRECTED HERO SECTION WITH VIDEO BACKGROUND
+   ========================================================================== */
+
+.hero {
+    position: relative; /* Crucial: pins child elements like the video inside this section boundaries */
+    overflow: hidden;   /* Prevents the video frame sizing from bleeding off your screen margins */
+    padding: 6rem 0; 
+    border-bottom: 1px solid var(--border-clean);
+}
+
+/* Forces the video background to cover the layout space tightly */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Acts like background-size: cover for raw media players */
+    transform: translate(-50%, -50%);
+    z-index: 1;        /* Pushes video canvas layout behind front text structures */
+}
+
+/* Premium white-tint mask matrix smoothing out background contrast */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Bright gradient overlay: makes video semi-transparent, blending into your white space */
+    background: linear-gradient(rgba(248, 250, 252, 0.82), rgba(248, 250, 252, 0.94));
+    z-index: 2;        /* Sits cleanly on top of the video but under your actual text */
+}
+
+/* Bumps your content grids forward so they stay clickable and copy-selectable */
+.hero-grid {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centers the entire text block horizontally */
+    text-align: center;     /* Centers your text alignment inside the block */
+    max-width: 800px;       /* Keeps lines comfortably readable across monitors */
+    margin: 0 auto;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers your action buttons underneath the text */
+    gap: 0.5rem;
+}
+
+
+.badge {
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--accent-blue);
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block; /* Prevents stretching to the width of the screen */
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    margin: 1rem 0;
+    line-height: 1.15;
+    color: var(--text-main);
+    font-weight: 800;
+}
+
+.hero-text p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.trust-subtext {
+    margin-top: 1.5rem;
+    font-size: 0.85rem !important;
+    color: var(--text-muted);
+}
+
+/* Interactive AI Chat Mockup Container */
+.phone-mockup {
+    background: #ffffff;
+    border: 1px solid var(--border-clean);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08);
+}
+
+.phone-header {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--medical-teal);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-clean);
+    padding-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.msg {
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.ai { 
+    background: #f0fdfa; 
+    border-left: 4px solid var(--medical-teal); 
+    color: #115e59;
+}
+
+.user { 
+    background: #f1f5f9; 
+    margin-left: 2rem; 
+    color: var(--text-main);
+}
+
+/* ==========================================================================
+   Grids & Informational Cards
+   ========================================================================== */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card, .feature-item {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-clean);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+
+.card h3, .feature-item h4 { margin-bottom: 1rem; color: var(--accent-blue); }
+.card p, .feature-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* ==========================================================================
+   Pricing Section
+   ========================================================================== */
+
+.currency-toggle button {
+    background: #ffffff;
+    color: var(--text-muted);
+    border: 1px solid var(--border-clean);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.currency-toggle button.active {
+    background: var(--medical-teal);
+    color: white;
+    border-color: var(--medical-teal);
+}
+
+.pricing-card {
+    background: #ffffff;
+    border: 1px solid var(--border-clean);
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+.price-display { font-size: 3rem; font-weight: bold; margin: 1rem 0; color: var(--text-main); }
+.price-display span { font-size: 1rem; color: var(--text-muted); }
+.pricing-features { list-style: none; text-align: left; margin-top: 1.5rem; }
+.pricing-features li { margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--text-muted); }
+
+/* ==========================================================================
+   Form Section
+   ========================================================================== */
+
+.form-section {
+    background: #ffffff;
+    border-top: 1px solid var(--border-clean);
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-clean);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.form-group { margin-bottom: 1.25rem; text-align: left;}
+.form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; }
+.form-group input, .form-group select {
+    width: 100%; padding: 0.75rem; background: #f8fafc;
+    border: 1px solid var(--border-clean); color: var(--text-main); border-radius: 6px;
+}
+
+.full-width { width: 100%; margin-top: 1rem; }
+
+/* ==========================================================================
+   Footer & Responsive Logic
+   ========================================================================== */
+
+footer { border-top: 1px solid var(--border-clean); background: #ffffff; padding: 2rem 0; }
+.compliance-text { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem; }
+
+@media(max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    nav, .nav-btn { display: none; }
+    .hero-text h1 { font-size: 2.4rem; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .btn-secondary { margin-left: 0; margin-top: 0.5rem; text-align: center;}
+}

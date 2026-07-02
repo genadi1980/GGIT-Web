@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ggit.ai | 24/7 Dental AI Voice Assistant</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="/static/img/LOGO1.PNG" alt="ggit.ai logo" class="brand-logo">
+            </div>
+            <nav>
+                <a href="#problem">The Problem</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#compliance">Compliance</a>
+            </nav>
+            <a href="#demo-form" class="btn btn-primary nav-btn">Book Demo</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- 🎥 High-Resolution Video Background Elements -->
+        <video autoplay loop muted playsinline class="hero-video">
+            <!-- Replace this URL with your preferred hosted video file path if needed -->
+            <source src="\static\videos\backgroundvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- White Frosted Overlay ensuring readability -->
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge">Built for 3–10 Dentist Practices</span>
+                <h1>Stop Losing Patients After 5 PM.</h1>
+                <p>The 24/7 AI Voice Assistant built exclusively for growing dental clinics. ggit.ai answers after-hours calls, instantly schedules appointments, and fields patient FAQs with clinical precision.</p>
+                <div class="hero-actions">
+                    <a href="#demo-form" class="btn btn-primary">Book a 10-Min Demo</a>
+                    <button class="btn btn-secondary" onclick="playAudioDemo()">Listen to Sample Call 🔊</button>
+                </div>
+                <p class="trust-subtext">🔒 HIPAA, GDPR, & Swiss FADP Compliant Data Architectures</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Problem & Pain Points -->
+    <section id="problem" class="cards-section">
+        <div class="container">
+            <h2 class="section-title text-center">Your Clinic Closes. Patient Phone Calls Don't.</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>35% Missed Revenue</h3>
+                    <p>Over a third of dental inquiries happen outside office hours. If no one answers, they call your competitor down the street.</p>
+                </div>
+                <div class="card">
+                    <h3>Overwhelmed Staff</h3>
+                    <p>Your reception team starts every morning stressed, sorting through a chaotic mountain of messy voicemails.</p>
+                </div>
+                <div class="card">
+                    <h3>Friction-Full Booking</h3>
+                    <p>Emergency patients need secure booking confirmation immediately, not tomorrow morning at 9:00 AM.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title text-center">Seamless Integration. Zero Friction.</h2>
+            <div class="grid-3">
+                <div class="feature-item">
+                    <h4>Smart Scheduling</h4>
+                    <p>Differentiates emergencies from routine scaling. Synchronizes immediately into open slots in your existing software calendar.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Accurate Clinic FAQs</h4>
+                    <p>Instantly answers incoming customer queries regarding parking spaces, pricing tiers, and post-op care steps.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Zero Training Needed</h4>
+                    <p>Simply divert your landline to your dedicated ggit.ai number after hours. We handle all system configurations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container text-center">
+            <h2>Predictable Pricing That Pays for Itself</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Select your target market currency:</p>
+            <div class="currency-toggle">
+                <button class="active" onclick="setCurrency('US', event)">USD ($)</button>
+                <button onclick="setCurrency('UK', event)">GBP (£)</button>
+                <button onclick="setCurrency('CH', event)">CHF (₣)</button>
+            </div>
+            <div class="pricing-card">
+                <h3>The Practice Growth Tier</h3>
+                <p class="price-display" id="price-value">$299<span>/month</span></p>
+                <p class="pricing-note">+ Flat-rate usage fee per call minute. Optimized for 3–10 practitioners.</p>
+                <ul class="pricing-features">
+                    <li>✓ Unlimited concurrent incoming calls</li>
+                    <li>✓ PMS calendar auto-syncing</li>
+                    <li>✓ Automated SMS confirmations to patients</li>
+                    <li>✓ Local regional phone number routing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Form Section -->
+    <section id="demo-form" class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="text-center" style="margin-bottom: 1rem;">See How Much Revenue ggit.ai Can Recover</h2>
+                <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem;">Book a live walkthrough video call with our systems engineers.</p>
+                <form id="leadForm" action="/submit-lead" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Dr. Alex Carter">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" required placeholder="alex@clinicname.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="clinic">Clinic Name (3-10 Dentists)</label>
+                        <input type="text" id="clinic" name="clinic" required placeholder="Apex Dental Group">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Target Market</label>
+                        <select id="country" name="country">
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CH">Switzerland</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Secure My Demo Call</button>
+                </form>
+                <div id="formResponse" class="hidden" style="margin-top: 1rem; text-align: center; font-weight: bold; color: var(--medical-teal);"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Compliance -->
+    <footer id="compliance">
+        <div class="container footer-content text-center">
+            <p>© 2026 ggit.ai. All rights reserved.</p>
+            <p class="compliance-text">Global Data Security: Built in alignment with US HIPAA, UK Data Protection Act (GDPR), and the Swiss Federal Act on Data Protection (FADP).</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Scripts -->
+    <script>
+        const plans = {
+            'US': { price: '$299', unit: '/month' },
+            'UK': { price: '£249', unit: '/month' },
+            'CH': { price: '₣279', unit: '/month' }
+        };
+
+        function setCurrency(region, event) {
+            const buttons = document.querySelectorAll('.currency-toggle button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const priceValue = document.getElementById('price-value');
+            priceValue.innerHTML = `${plans[region].price}<span>${plans[region].unit}</span>`;
+        }
+
+        function playAudioDemo() {
+            alert("📢 Sound sample simulation: 'Hi! Thank you for calling Dental Care Clinic. Let me check the schedule calendar... '");
+        }
+
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const responseBox = document.getElementById('formResponse');
+            
+            try {
