@@ -28,8 +28,7 @@
     <section class="hero">
         <!-- 🎥 High-Resolution Video Background Elements -->
         <video autoplay loop muted playsinline class="hero-video">
-            <!-- Replace this URL with your preferred hosted video file path if needed -->
-            <source src="\static\videos\backgroundvideo.mp4" type="video/mp4">
+            <source src="/static/videos/backgroundvideo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
@@ -47,7 +46,6 @@
                 </div>
                 <p class="trust-subtext">🔒 HIPAA, GDPR, & Swiss FADP Compliant Data Architectures</p>
             </div>
-            
         </div>
     </section>
 
@@ -123,7 +121,8 @@
             <div class="form-container">
                 <h2 class="text-center" style="margin-bottom: 1rem;">See How Much Revenue ggit.ai Can Recover</h2>
                 <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem;">Book a live walkthrough video call with our systems engineers.</p>
-                <form id="leadForm" action="https://formspree.io/f/maqgleny" method="POST">
+                
+                <form id="leadForm" action="https://formspree.io" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required placeholder="Dr. Alex Carter">
@@ -131,6 +130,11 @@
                     <div class="form-group">
                         <label for="email">Work Email</label>
                         <input type="email" id="email" name="email" required placeholder="alex@clinicname.com">
+                    </div>
+                    <!-- 📞 ТЕЛЕФОНЕН НОМЕР ИНТЕГРИРАН ТУК -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
                     </div>
                     <div class="form-group">
                         <label for="clinic">Clinic Name (3-10 Dentists)</label>
@@ -146,6 +150,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary full-width">Secure My Demo Call</button>
                 </form>
+                
                 <div id="formResponse" class="hidden" style="margin-top: 1rem; text-align: center; font-weight: bold; color: var(--medical-teal);"></div>
             </div>
         </div>
@@ -164,25 +169,24 @@
         const plans = {
             'US': { price: '$299', unit: '/month' },
             'UK': { price: '£249', unit: '/month' },
-            'CH': { price: '₣279', unit: '/month' }
+            'CH': { price: 'CHF 279', unit: '/month' }
         };
 
-        function setCurrency(region, event) {
-            const buttons = document.querySelectorAll('.currency-toggle button');
-            buttons.forEach(btn => btn.classList.remove('active'));
+        function setCurrency(market, event) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.currency-toggle button').forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
             event.target.classList.add('active');
             
-            const priceValue = document.getElementById('price-value');
-            priceValue.innerHTML = `${plans[region].price}<span>${plans[region].unit}</span>`;
+            // Update pricing display
+            const plan = plans[market];
+            document.getElementById('price-value').innerHTML = `${plan.price}<span>${plan.unit}</span>`;
         }
 
         function playAudioDemo() {
-            alert("📢 Sound sample simulation: 'Hi! Thank you for calling Dental Care Clinic. Let me check the schedule calendar... '");
+            // Placeholder function for audio demo play logic
+            alert("Playing sample call demo... (Connect your hosted audio file here)");
         }
-
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const responseBox = document.getElementById('formResponse');
-            
-            try {
+    </script>
+</body>
+</html>

@@ -6,26 +6,40 @@ import os
 
 app = FastAPI(title="ggit.ai - Dental AI Assistant")
 
-# Ensure static and templates directories exist
+# Автоматично уверяване, че папките за статични файлове и шаблони съществуват
 os.makedirs("static/css", exist_ok=True)
 os.makedirs("static/js", exist_ok=True)
 os.makedirs("templates", exist_ok=True)
 
-# Mount static files (CSS/JS)
+# Монтиране на статичните файлове (за CSS, изображения и видео бекграунд)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
+
 @app.get("/", response_class=HTMLResponse)
 async def read_index(request: Request):
+    """
+    Рандира и визуализира основния Landing Page (index.html) в браузъра.
+    """
     return templates.TemplateResponse(request=request, name="index.html")
+
 
 @app.post("/submit-lead")
 async def handle_lead(
-    name: str = Form(...), 
-    email: str = Form(...), 
+    name: str = Form(...),
+    email: str = Form(...),
+    phone: str = Form(...),  # 📞 Полето за телефон е интегрирано правилно в FastAPI
     clinic: str = Form(...),
-    country: str = Form(...)
+    country: str = Form(...),
 ):
-    # Here you will integrate your PostgreSQL logic using SQLAlchemy or asyncpg
-    # Example: await db.execute(leads.insert().values(name=name, email=email, clinic=clinic, country=country))
-    return {"status": "success", "message": "Demo booked! Our team will contact you shortly."}
+    """
+    Ендпоинт за обработка на изпратените контакти (leads).
+    Готов за бъдеща PostgreSQL интеграция.
+    """
+    # Бъдещо развитие: Тук ще добавиш твоята база данни
+    # Пример: await db.execute(leads.insert().values(name=name, email=email, phone=phone, clinic=clinic, country=country))
+
+    return {
+        "status": "success",
+        "message": "Demo booked! Our team will contact you shortly.",
+    }
