@@ -43,3 +43,19 @@ async def handle_lead(
         "status": "success",
         "message": "Demo booked! Our team will contact you shortly.",
     }
+
+
+@app.get("/privacy", response_class=HTMLResponse)
+async def read_privacy(request: Request):
+    """
+    Рандира и визуализира страницата с Политиката за поверителност (privacy.html).
+    """
+    return templates.TemplateResponse(request=request, name="privacy.html")
+
+
+@app.get("/terms", response_class=HTMLResponse)
+async def read_terms(request: Request):
+    """
+    Рандира и визуализира страницата с Общите условия за ползване (terms.html).
+    """
+    return templates.TemplateResponse(request=request, name="terms.html")

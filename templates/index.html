@@ -10,27 +10,34 @@
 
     <!-- Header / Navigation -->
     <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="/static/img/LOGO1.PNG" alt="ggit.ai logo" class="brand-logo">
+        <div class="container nav-container" style="padding: 0.6rem 0;">
+            <div class="logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="/static/img/logo.png" alt="ggit.ai logo" class="brand-logo" style="height: 105px; width: 105px;">
+                <span style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--text-main); letter-spacing: -1.5px;">GGIT</span>
             </div>
             <nav>
                 <a href="#problem">The Problem</a>
-                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#calculator">Calculator</a>
+                <a href="#gallery">Showcase</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#compliance">Compliance</a>
             </nav>
-            <a href="https://calendar.app.google/dpRarjnMrL995qew6" target="_blank" class="btn btn-primary nav-btn">Book Demo</a>
+            <a href="https://calendar.app.google/jShLVgGnrGSahVDn7" target="_blank" class="btn btn-primary nav-btn">Book Demo</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- 🎥 High-Resolution Video Background Elements -->
-        <video autoplay loop muted playsinline class="hero-video">
-            <source src="/static/videos/backgroundvideo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- 🖼️ Interactive Background Image Carousel -->
+        <div class="hero-bg-carousel">
+            <div class="hero-bg-slide active" style="background-image: url('/static/img/1.jpg');"></div>
+            <div class="hero-bg-slide" style="background-image: url('/static/img/2.jpg');"></div>
+            <div class="hero-bg-slide" style="background-image: url('/static/img/3.jpg');"></div>
+            <div class="hero-bg-slide" style="background-image: url('/static/img/4.jpg');"></div>
+            <div class="hero-bg-slide" style="background-image: url('/static/img/5.jpg');"></div>
+            <div class="hero-bg-slide" style="background-image: url('/static/img/6.jpg');"></div>
+        </div>
         
         <!-- White Frosted Overlay ensuring readability -->
         <div class="hero-overlay"></div>
@@ -38,10 +45,13 @@
         <div class="container hero-grid">
             <div class="hero-text">
                 <span class="badge">Built for 3–10 Dentist Practices</span>
-                <h1>Stop Losing Patients After 5 PM.</h1>
-                <p>The 24/7 AI Voice Assistant built exclusively for growing dental clinics. ggit.ai answers after-hours calls, instantly schedules appointments, and fields patient FAQs with clinical precision.</p>
+                <h1 style="text-transform: uppercase; letter-spacing: -0.5px;">Book More Patients With AI</h1>
+                <p style="font-weight: 600; color: var(--accent-blue); font-size: 1.3rem; margin-top: -0.5rem; margin-bottom: 1.5rem;">
+                    And Instantly Save Time and Rescue Missed Calls
+                </p>
+                <p>The 24/7 AI Voice Assistant built exclusively for growing dental clinics. ggit.ai answers after-hours calls instantly, resolves booking inquiries live, and schedules appointments straight into your clinic software.</p>
                 <div class="hero-actions">
-                    <a href="https://calendar.app.google/dpRarjnMrL995qew6" target="_blank" class="btn btn-primary">Book a 10-Min Demo</a>
+                    <a href="#demo-form" class="btn btn-primary">Try Free Demo</a>
                     <a href="tel:+18039823119" class="btn btn-secondary">Call GiGi Live: +1 (803) 982-3119 🔊</a>
                 </div>
                 <p class="trust-subtext">🔒 HIPAA, GDPR, & Swiss FADP Compliant Data Architectures</p>
@@ -56,37 +66,198 @@
             <div class="grid-3">
                 <div class="card">
                     <h3>35% Missed Revenue</h3>
-                    <p>Over a third of dental inquiries happen outside office hours. If no one answers, they call your competitor down the street.</p>
+                    <p>Over a third of dental inquiries and emergency toothache calls happen outside office hours. If no one answers, patients call the next clinic down the street.</p>
                 </div>
                 <div class="card">
                     <h3>Overwhelmed Staff</h3>
-                    <p>Your reception team starts every morning stressed, sorting through a chaotic mountain of messy voicemails.</p>
+                    <p>Your reception team starts every busy morning stressed out, sorting through a chaotic mountain of messy, hard-to-understand voicemails.</p>
                 </div>
                 <div class="card">
                     <h3>Friction-Full Booking</h3>
-                    <p>Emergency patients need secure booking confirmation immediately, not tomorrow morning at 9:00 AM.</p>
+                    <p>Emergency patients need secure, immediate booking confirmation right during the call—not a callback the next morning at 9:00 AM.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
+    <!-- Value Proposition (3 Pillars) -->
+    <section class="cards-section" style="background: var(--bg-card); border-top: 1px solid var(--border-clean);">
         <div class="container">
-            <h2 class="section-title text-center">Seamless Integration. Zero Friction.</h2>
+            <h2 class="section-title text-center">Engineered for Automated Dental Growth</h2>
+            <p class="text-center" style="color: var(--text-muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Our AI voice workflows and automated scheduling assistants maximize your reception efficiency and recover thousands of dollars in lost patient lifetime value.
+            </p>
             <div class="grid-3">
-                <div class="feature-item">
-                    <h4>Smart Scheduling</h4>
-                    <p>Differentiates emergencies from routine scaling. Synchronizes immediately into open slots in your existing software calendar.</p>
+                <div class="card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                    <h3 style="color: var(--text-main);">Instant Speed-to-Response</h3>
+                    <p>An AI voice agent answers on the first ring, 24/7. No waiting on hold, no busy tones, and zero patient inquiries left hanging.</p>
                 </div>
-                <div class="feature-item">
-                    <h4>Accurate Clinic FAQs</h4>
-                    <p>Instantly answers incoming customer queries regarding parking spaces, pricing tiers, and post-op care steps.</p>
+                <div class="card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💖</div>
+                    <h3 style="color: var(--text-main);">Maximize Patient Retention</h3>
+                    <p>Ensure emergency toothaches, cosmetic consultations, and booking check-ins are scheduled immediately without giving patients room to call competitors.</p>
                 </div>
-                <div class="feature-item">
-                    <h4>Zero Training Needed</h4>
-                    <p>Simply divert your landline to your dedicated ggit.ai number after hours. We handle all system configurations.</p>
+                <div class="card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔄</div>
+                    <h3 style="color: var(--text-main);">Automated Clean Recalls</h3>
+                    <p>Deploy AI workflows to automatically call cold patient databases, forgotten checkup recalls, and cancelation lists to keep your chairs fully booked.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Lost Revenue Calculator -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title text-center">How Much Revenue Is Your Clinic Losing?</h2>
+            <p class="text-center" style="color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Use our interactive simulator to calculate the conservative amount of patient bookings and monthly revenue slipping through your clinic's phone lines to voicemail.
+            </p>
+            
+            <div class="calculator-container">
+                <div class="calculator-group">
+                    <label for="missedCallsInput">Average Missed Calls Per Month</label>
+                    <div class="calculator-input-wrapper">
+                        <input type="number" id="missedCallsInput" value="50" min="0" max="1000">
+                    </div>
+                </div>
+                
+                <div class="calculator-results">
+                    <div class="result-card">
+                        <h4>Lost Patient Bookings</h4>
+                        <div id="lostPatientsDisplay" class="result-value">10</div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Assumes a standard 20% appointment scheduling rate.</p>
+                    </div>
+                    <div class="result-card">
+                        <h4>Lost Monthly Revenue</h4>
+                        <div id="lostRevenueDisplay" class="result-value accented">$5,000</div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Based on a conservative $500 dental patient lifetime value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section (How It Works) -->
+    <section id="how-it-works" class="process-section">
+        <div class="container">
+            <h2 class="section-title text-center">3 Steps to Seamless Automated Growth</h2>
+            <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto;">
+                We connect directly to your clinic's existing infrastructure. No complex software changes or receptionist team retraining needed.
+            </p>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Patient Calls In</h3>
+                    <p>A patient dials your office number after hours, on weekends, or when your physical front-desk staff is busy assisting an in-office patient.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>AI Answers Instantly</h3>
+                    <p>ggit.ai's voice agent answers on the first ring, handles patient questions with medical precision, and qualifies emergencies versus checkups.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Calendar Synchronized</h3>
+                    <p>The AI writes the booking directly into your practice software calendar, dispatches an automatic confirmation text, and notifies your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Gallery Section -->
+    <section id="gallery" class="carousel-section">
+        <div class="container">
+            <h2 class="section-title text-center" style="margin-bottom: 0.5rem;">GGIT.AI in Action</h2>
+            <p class="text-center" style="color: var(--text-muted); margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Experience how our 24/7 AI Voice Receptionists and automated clinic workflows streamline daily operations, rescue missed after-hours leads, and deliver premium care experiences.
+            </p>
+            
+            <div class="carousel-container">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <img class="carousel-image" src="/static/img/1.jpg" alt="AI Agent Workflow 1">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="/static/img/2.jpg" alt="AI Agent Workflow 2">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="/static/img/3.jpg" alt="AI Agent Workflow 3">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="/static/img/4.jpg" alt="AI Agent Workflow 4">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="/static/img/5.jpg" alt="AI Agent Workflow 5">
+                        </li>
+                        <li class="carousel-slide">
+                            <img class="carousel-image" src="/static/img/6.jpg" alt="AI Agent Workflow 6">
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Controls -->
+                <button class="carousel-button carousel-button--left is-hidden" aria-label="Previous Slide">&lsaquo;</button>
+                <button class="carousel-button carousel-button--right" aria-label="Next Slide">&rsaquo;</button>
+                
+                <!-- Navigation Indicators -->
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-indicator" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" aria-label="Slide 6"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Checklist ("Never Miss A Booking Again") -->
+    <section class="checklist-section" style="border-bottom: 1px solid var(--border-clean); padding: 4rem 0;">
+        <div class="container">
+            <div class="checklist-grid">
+                <div class="checklist-text">
+                    <span class="badge" style="margin-bottom: 1rem;">Clinical Efficiency Checklist</span>
+                    <h2 style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 1.5rem; font-weight: 800;">Never Miss Another Patient Booking</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        Unlike generic voice response platforms, ggit.ai is custom-tailored for dental guidelines. We build, manage, and optimize the voice system for you to guarantee absolute operational success.
+                    </p>
+                </div>
+                
+                <ul class="checklist-items">
+                    <li class="checklist-item">
+                        <div class="checklist-icon">✓</div>
+                        <div class="checklist-content">
+                            <h4>Ultra-Realistic Human Voice Agents</h4>
+                            <p>Whisper-quiet natural voice latency that makes patients feel like they are speaking to a friendly, warm in-office receptionist.</p>
+                        </div>
+                    </li>
+                    <li class="checklist-item">
+                        <div class="checklist-icon">✓</div>
+                        <div class="checklist-content">
+                            <h4>HIPAA & GDPR Secure Security</h4>
+                            <p>Your patients' dental inquiries, sensitive clinical details, and scheduling data are heavily encrypted and Swiss-compliant.</p>
+                        </div>
+                    </li>
+                    <li class="checklist-item">
+                        <div class="checklist-icon">✓</div>
+                        <div class="checklist-content">
+                            <h4>In-Conversation Calendar Scheduling</h4>
+                            <p>Direct live booking into your PMS software without emailing messy calendar links. The AI registers their timeslot live during the conversation.</p>
+                        </div>
+                    </li>
+                    <li class="checklist-item">
+                        <div class="checklist-icon">✓</div>
+                        <div class="checklist-content">
+                            <h4>Done-For-You Integration in 7 Days</h4>
+                            <p>Our dedicated voice engineers handle all workflow configurations, FAQ playbook creation, and call routing for your practice.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -115,78 +286,79 @@
         </div>
     </section>
 
-    <!-- Lead Capture Form Section -->
-    <section id="demo-form" class="form-section">
-        <div class="container">
-            <div class="form-container">
-                <h2 class="text-center" style="margin-bottom: 1rem;">See How Much Revenue ggit.ai Can Recover</h2>
-                <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem;">Book a live walkthrough video call with our systems engineers.</p>
+    <!-- Lead Capture Form & Interactive Calendar Section -->
+    <section id="demo-form" class="form-section" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1100px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: start;">
                 
-                <form id="leadForm" action="https://formspree.io/f/maqgleny" method="POST">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Dr. Alex Carter">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Work Email</label>
-                        <input type="email" id="email" name="email" required placeholder="alex@clinicname.com">
-                    </div>
-                    <!-- 📞 ТЕЛЕФОНЕН НОМЕР ИНТЕГРИРАН ТУК -->
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
-                    </div>
-                    <div class="form-group">
-                        <label for="clinic">Clinic Name (3-10 Dentists)</label>
-                        <input type="text" id="clinic" name="clinic" required placeholder="Apex Dental Group">
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Target Market</label>
-                        <select id="country" name="country">
-                            <option value="US">United States</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="CH">Switzerland</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary full-width">Secure My Demo Call</button>
-                </form>
-                
-                <div id="formResponse" class="hidden" style="margin-top: 1rem; text-align: center; font-weight: bold; color: var(--medical-teal);"></div>
+                <!-- Left: Form Container -->
+                <div class="form-container" style="margin: 0; width: 100%; max-width: 100%;">
+                    <h2 class="text-center" style="margin-bottom: 1rem; font-size: 1.8rem; font-weight: 800;">Request Callback</h2>
+                    <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Have questions first? Submit your details and our team will reach out directly.</p>
+                    
+                    <form id="leadForm" action="https://formspree.io/f/maqgleny" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Dr. Alex Carter">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Work Email</label>
+                            <input type="email" id="email" name="email" required placeholder="alex@clinicname.com">
+                        </div>
+                        <!-- 📞 PHONE NUMBER INTEGRATION -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="clinic">Clinic Name (3-10 Dentists)</label>
+                            <input type="text" id="clinic" name="clinic" required placeholder="Apex Dental Group">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Target Market</label>
+                            <select id="country" name="country">
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="CH">Switzerland</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">Secure My Callback</button>
+                    </form>
+                    
+                    <div id="formResponse" class="hidden" style="margin-top: 1rem; text-align: center; font-weight: bold; color: var(--medical-teal);"></div>
+                </div>
+
+                <!-- Right: Interactive Calendar Card -->
+                <div class="calendar-container-embed" style="background: var(--bg-card); padding: 3rem 2rem; border-radius: 12px; border: 1px solid var(--border-clean); box-shadow: 0 10px 30px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%; min-height: 480px;">
+                    <div style="font-size: 3.5rem; margin-bottom: 1.5rem; animation: float 6s ease-in-out infinite;">📅</div>
+                    <h2 style="margin-bottom: 1rem; font-size: 1.8rem; font-weight: 800; color: var(--text-main);">Book Walkthrough Instantly</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1rem; max-width: 400px; line-height: 1.6;">
+                        Select your exact date and timeslot directly in our schedule calendar. Confirm your live ggit.ai dental voice system demo instantly with zero waiting.
+                    </p>
+                    <a href="https://calendar.app.google/jShLVgGnrGSahVDn7" target="_blank" class="btn btn-primary" style="padding: 1.25rem 2.5rem; font-size: 1.1rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);">
+                        <span>Launch Live Scheduler</span>
+                        <span style="font-size: 1.2rem;">⚡</span>
+                    </a>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1.5rem;">📅 Direct integration with Google Calendar</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-       <!-- Footer & Compliance -->
+    <!-- Footer & Compliance -->
     <footer id="compliance">
-        <div class="container footer-content text-center">
-            <p>© 2026 ggit.ai. All rights reserved. | Contact: +1 (803) 982-3119</p>
-            <p class="compliance-text">Global Data Security: Built in alignment with US HIPAA, UK Data Protection Act (GDPR), and the Swiss Federal Act on Data Protection (FADP).</p>
+        <div class="container footer-content text-center" style="line-height: 1.8;">
+            <p style="font-weight: 700; color: var(--text-main); font-size: 1.05rem; margin-bottom: 0.5rem; letter-spacing: 0.5px;">GLOBAL GROUP INTELLIGENCE TECHNOLOGIES LTD</p>
+            <p class="compliance-text" style="font-size: 0.85rem; margin-bottom: 0.75rem; color: var(--text-muted);">
+                41 Rowan Court Peter Street, Folkestone, England CT20 1JE
+            </p>
+            <p>© 2026 GGIT. All rights reserved. | Contact: +1 (803) 982-3119 | info@ggit.ai | <a href="/privacy" style="color: var(--medical-teal); text-decoration: underline; margin-right: 0.5rem;">Privacy Policy</a> | <a href="/terms" style="color: var(--medical-teal); text-decoration: underline;">Terms of Service</a></p>
+            <p class="compliance-text" style="margin-top: 1rem;">Global Data Security: Built in alignment with US HIPAA, UK Data Protection Act (GDPR), and the Swiss Federal Act on Data Protection (FADP).</p>
         </div>
     </footer>
 
     <!-- Interactive Logic Scripts -->
-    <script>
-        const plans = {
-            'US': { price: '$299', unit: '/month' },
-            'UK': { price: '£249', unit: '/month' },
-            'CH': { price: 'CHF 279', unit: '/month' }
-        };
-
-        function setCurrency(market, event) {
-            // Remove active class from all buttons
-            document.querySelectorAll('.currency-toggle button').forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            event.target.classList.add('active');
-            
-            // Update pricing display
-            const plan = plans[market];
-            document.getElementById('price-value').innerHTML = `${plan.price}<span>${plan.unit}</span>`;
-        }
-
-        function playAudioDemo() {
-            // Placeholder function for audio demo play logic
-            alert("Playing sample call demo... (Connect your hosted audio file here)");
-        }
-    </script>
+    <script src="/static/js/app.js"></script>
 </body>
 </html>
