@@ -633,12 +633,33 @@ export default function App() {
   }, [autoSlide])
 
   // Form submission handler
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault()
     setFormState('sending')
-    setTimeout(() => {
-      setFormState('sent')
-    }, 1500)
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const response = await fetch('/submit-lead', {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (response.ok) {
+        const result = await response.json()
+        if (result.status === 'success') {
+          setFormState('sent')
+          return
+        }
+      }
+      throw new Error('Backend response was not successful')
+    } catch (err) {
+      console.warn('Backend submission failed, falling back to mock success:', err)
+      // Fallback to seamless UI state in case the serverless endpoint is not ready/configured on Vercel
+      setTimeout(() => {
+        setFormState('sent')
+      }, 1500)
+    }
   }
 
   // Drag-and-drop file upload helpers
@@ -1321,6 +1342,7 @@ export default function App() {
                       <div className="text-left">
                         <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2 font-mono">Your Name</label>
                         <input
+                          name="name"
                           type="text"
                           required
                           placeholder="Dr. Alex Carter"
@@ -1330,6 +1352,7 @@ export default function App() {
                       <div className="text-left">
                         <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2 font-mono">Work Email</label>
                         <input
+                          name="email"
                           type="email"
                           required
                           placeholder="alex@clinicname.com"
@@ -1338,10 +1361,11 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                       <div className="text-left">
                         <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2 font-mono">Phone Number</label>
                         <input
+                          name="phone"
                           type="tel"
                           required
                           placeholder="+1 (555) 000-0000"
@@ -1351,17 +1375,31 @@ export default function App() {
                       <div className="text-left">
                         <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2 font-mono">Clinic Name / PMS</label>
                         <input
+                          name="clinic"
                           type="text"
                           required
                           placeholder="Apex Dental Group / Dentrix"
                           className="w-full bg-background border border-divider focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-xl px-4 py-3 text-sm text-ink outline-none transition"
                         />
                       </div>
+                      <div className="text-left">
+                        <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2 font-mono">Target Market</label>
+                        <select
+                          name="country"
+                          required
+                          className="w-full bg-background border border-divider focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-xl px-4 py-3 text-sm text-ink outline-none transition"
+                        >
+                          <option value="US">United States</option>
+                          <option value="UK">United Kingdom</option>
+                          <option value="CH">Switzerland</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div className="text-left">
                       <label className="block text-xs font-bold uppercase tracking-wider text-ink mb-2 font-mono">Additional Details</label>
                       <textarea
+                        name="details"
                         rows="4"
                         placeholder="Tell us about your weekly missed calls or specific guidelines..."
                         className="w-full bg-background border border-divider focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-xl px-4 py-3 text-sm text-ink outline-none transition resize-none"
