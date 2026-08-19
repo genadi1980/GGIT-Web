@@ -7,13 +7,13 @@ import os
 app = FastAPI(title="ggit.ai - Dental AI Assistant")
 
 # Автоматично уверяване, че папките за статични файлове и шаблони съществуват
-os.makedirs("static/css", exist_ok=True)
-os.makedirs("static/js", exist_ok=True)
-os.makedirs("templates", exist_ok=True)
+os.makedirs("legacy_site/static/css", exist_ok=True)
+os.makedirs("legacy_site/static/js", exist_ok=True)
+os.makedirs("legacy_site/templates", exist_ok=True)
 
 # Монтиране на статичните файлове (за CSS, изображения и видео бекграунд)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="legacy_site/static"), name="static")
+templates = Jinja2Templates(directory="legacy_site/templates")
 
 
 @app.get("/", response_class=HTMLResponse)
