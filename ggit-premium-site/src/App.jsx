@@ -121,14 +121,14 @@ function Navbar() {
         className="fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 glass shadow-lg shadow-primary/10 border border-divider/50 rounded-full px-4 sm:px-6 py-2.5 w-[calc(100%-2rem)] max-w-5xl"
       >
         <div className="flex items-center justify-between gap-6">
-          <a href="#hjem" className="flex items-center gap-3.5 group">
+          <a href="#hjem" className="flex items-center gap-2.5 group">
             <img
               src="/logo.png"
               alt="ggit.ai logo"
-              className="h-14 w-14 object-cover rounded-full bg-white p-0.5 border border-divider shadow-md group-hover:scale-105 transition duration-300"
+              className="h-10 w-10 object-cover rounded-full bg-white p-0.5 border border-divider shadow-md group-hover:scale-105 transition duration-300"
             />
             <span
-              className="font-display font-black tracking-tight text-2xl text-ink transition-colors"
+              className="font-display font-black tracking-tight text-xl text-ink transition-colors"
             >
               GGIT
             </span>
@@ -182,11 +182,11 @@ function Navbar() {
           }`}
         >
           <div className="flex items-center justify-between mb-8">
-            <span className="font-display font-extrabold text-2xl text-ink flex items-center gap-3">
+            <span className="font-display font-extrabold text-lg text-ink flex items-center gap-2.5">
               <img
                 src="/logo.png"
                 alt="ggit.ai logo"
-                className="h-12 w-12 object-cover rounded-full bg-white p-0.5 border border-divider shadow-sm"
+                className="h-10 w-10 object-cover rounded-full bg-white p-0.5 border border-divider shadow-sm"
               />
               GGIT
             </span>
@@ -1101,6 +1101,29 @@ export default function App() {
                   }`}
                 />
               ))}
+            </div>
+          </div>
+
+          {/* Live AI Assistant Demo */}
+          <div className="mt-28 text-center max-w-4xl mx-auto">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary font-bold">Live Interaction</span>
+            <h3 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-ink mt-3 mb-4">
+              Test GiGi — Your 24/7 AI Voice & Chat Assistant
+            </h3>
+            <p className="text-muted text-sm sm:text-base font-body max-w-2xl mx-auto mb-10 leading-relaxed">
+              Chat with GiGi live. Ask dental-related questions, practice management scenarios, or try booking a demo appointment to see how our clinical agent responds instantly.
+            </p>
+
+            <div className="glass rounded-3xl p-2 max-w-3xl mx-auto border border-divider shadow-xl overflow-hidden bg-white/50">
+              <iframe
+                src="https://buildmyagent.io/chat/6a84b22dc1d981fb6f33e400"
+                width="100%"
+                height="560px"
+                frameBorder="0"
+                className="rounded-2xl border border-divider bg-white"
+                title="GiGi AI Assistant Live Demo"
+                allow="microphone; camera; clipboard-write; read-clipboard"
+              />
             </div>
           </div>
         </div>
