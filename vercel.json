@@ -1,0 +1,5 @@
+{
+  "installCommand": "npm install --prefix ggit-premium-site",
+  "buildCommand": "npm run build --prefix ggit-premium-site",
+  "outputDirectory": "ggit-premium-site/dist"
+}

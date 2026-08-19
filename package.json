@@ -1,0 +1,9 @@
+{
+  "name": "ggit-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build --prefix ggit-premium-site",
+    "dev": "npm run dev --prefix ggit-premium-site"
+  }
+}
