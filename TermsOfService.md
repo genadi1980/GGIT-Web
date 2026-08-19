@@ -21,7 +21,7 @@ If you do not agree to these Terms, you must not access or use the Services.
 
 2.2 Authority. You confirm you are at least 18, acting in a business capacity, and authorized to bind your organization.
 
-2.3 End-Users. Where our AI voice agents, chatbots, or related products (including GiGi) interact with your own customers or contacts ("End-Users"), you are responsible for your own terms and privacy notices governing that relationship. GGIT's role toward End-Users is set out in the applicable Data Processing Agreement ("DPA") and Section 8.
+2.3 End-Users. Where our AI voice agents, chatbots, or related products (including GiGi) interact with your own customers or contacts ("End-Users"), you are responsible for your own terms and privacy notices governing that relationship. GGIT's role toward End-Users is set out in the applicable Data Processing Agreement ("DPA") and Section 14.
 
 3. Description of Services
 

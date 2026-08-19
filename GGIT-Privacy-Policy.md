@@ -47,7 +47,7 @@ Depending on how you interact with us, we may collect:
 - Information provided during onboarding or configuration of AI agents
 
 **b) Information collected through our AI voice agents and chatbots**
-- Call audio recordings (only where necessary and appropriately disclosed — see Section 8)
+- Call audio recordings (only where necessary and appropriately disclosed — see Section 6)
 - Transcripts and summaries generated from calls or chats
 - Metadata such as call duration, timestamps, and call outcomes
 
