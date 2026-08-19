@@ -1114,13 +1114,15 @@ export default function App() {
               Chat with GiGi live. Ask dental-related questions, practice management scenarios, or try booking a demo appointment to see how our clinical agent responds instantly.
             </p>
 
-            <div className="glass rounded-3xl p-2 max-w-3xl mx-auto border border-divider shadow-xl overflow-hidden bg-white/50">
+            <div className="glass rounded-3xl p-2 max-w-4xl mx-auto border border-divider shadow-xl overflow-hidden bg-white/50">
               <iframe
-                src="https://buildmyagent.io/widget/6a84b22dc1d981fb6f33e400"
+                src="https://buildmyagent.io/shared/s4CVIQRME2?embed=true"
                 width="100%"
-                height="560px"
-                frameBorder="0"
-                className="rounded-2xl border border-divider bg-white"
+                height="600"
+                className="rounded-2xl bg-white"
+                style={{ border: 'none', width: '100%', minHeight: '400px', height: '90vh', maxHeight: '90vh' }}
+                allowFullScreen
+                loading="lazy"
                 title="GiGi AI Assistant Live Demo"
                 allow="microphone; camera; clipboard-write; read-clipboard"
               />
