@@ -1118,9 +1118,9 @@ export default function App() {
               <iframe
                 src="https://buildmyagent.io/shared/s4CVIQRME2?embed=true"
                 width="100%"
-                height="400"
+                height="500"
                 className="rounded-2xl bg-white"
-                style={{ border: 'none', width: '100%', height: '400px' }}
+                style={{ border: 'none', width: '100%', height: '500px' }}
                 allowFullScreen
                 loading="lazy"
                 title="GiGi AI Assistant Live Demo"
