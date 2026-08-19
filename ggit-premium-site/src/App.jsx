@@ -1116,7 +1116,7 @@ export default function App() {
 
             <div className="glass rounded-3xl p-2 max-w-3xl mx-auto border border-divider shadow-xl overflow-hidden bg-white/50">
               <iframe
-                src="https://buildmyagent.io/chat/6a84b22dc1d981fb6f33e400"
+                src="https://buildmyagent.io/widget/6a84b22dc1d981fb6f33e400"
                 width="100%"
                 height="560px"
                 frameBorder="0"
