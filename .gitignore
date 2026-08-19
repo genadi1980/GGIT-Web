@@ -1,3 +1,19 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules and build output
+node_modules
+dist
+dist-ssr
+*.local
+
+# Python files and virtual environment
 __pycache__/
 *.pyc
 *.pyo
@@ -7,14 +23,32 @@ __pycache__/
 venv/
 ENV/
 env/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vercel and Env files
+.vercel
 .env
 .env.*
-.DS_Store
+.env*
+
+# Thumbs and OS files
 Thumbs.db
+
+# Images exceptions and ignores
 *.PNG
 *.png
-!ggit-premium-site/public/logo.png
-!static/img/logo.png
-!static/img/LOGO1.PNG
-!Images/LOGO.PNG
-!Images/SignatureGGITAI.png
+!public/logo.png
+!legacy-site/static/img/logo.png
+!legacy-site/static/img/LOGO1.PNG
+!legacy-site/Images/LOGO.PNG
+!legacy-site/Images/SignatureGGITAI.png
