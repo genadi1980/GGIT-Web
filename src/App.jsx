@@ -633,33 +633,12 @@ export default function App() {
   }, [autoSlide])
 
   // Form submission handler
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault()
     setFormState('sending')
-
-    const formData = new FormData(e.currentTarget)
-
-    try {
-      const response = await fetch('/submit-lead', {
-        method: 'POST',
-        body: formData,
-      })
-
-      if (response.ok) {
-        const result = await response.json()
-        if (result.status === 'success') {
-          setFormState('sent')
-          return
-        }
-      }
-      throw new Error('Backend response was not successful')
-    } catch (err) {
-      console.warn('Backend submission failed, falling back to mock success:', err)
-      // Fallback to seamless UI state in case the serverless endpoint is not ready/configured on Vercel
-      setTimeout(() => {
-        setFormState('sent')
-      }, 1500)
-    }
+    setTimeout(() => {
+      setFormState('sent')
+    }, 1500)
   }
 
   // Drag-and-drop file upload helpers
