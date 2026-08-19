@@ -48,7 +48,7 @@ Thumbs.db
 *.PNG
 *.png
 !public/logo.png
-!legacy-site/static/img/logo.png
-!legacy-site/static/img/LOGO1.PNG
-!legacy-site/Images/LOGO.PNG
-!legacy-site/Images/SignatureGGITAI.png
+!legacy_site/static/img/logo.png
+!legacy_site/static/img/LOGO1.PNG
+!legacy_site/Images/LOGO.PNG
+!legacy_site/Images/SignatureGGITAI.png

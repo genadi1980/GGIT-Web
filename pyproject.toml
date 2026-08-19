@@ -1,2 +1,2 @@
 [tool.vercel]
-entrypoint = "legacy-site.main:app"
+entrypoint = "legacy_site.main:app"
