@@ -600,7 +600,7 @@ export default function App() {
   // pricing currency state
   const [currency, setCurrency] = useState('US')
   const pricingPlans = {
-    'US': { price: '$299', unit: '/month' },
+    'US': { price: '$250', unit: '/month' },
     'UK': { price: '£249', unit: '/month' },
     'CH': { price: 'CHF 279', unit: '/month' }
   }
@@ -1497,6 +1497,7 @@ export default function App() {
                 <li><a href="#how-it-works" className="hover:text-white transition">The Protocol</a></li>
                 <li><a href="#calculator" className="hover:text-white transition">Lost Revenue Calculator</a></li>
                 <li><a href="#showcase" className="hover:text-white transition">System Showcase</a></li>
+                <li><Link to="/payments" className="hover:text-white transition text-primary-light font-medium">Payments</Link></li>
               </ul>
             </div>
 

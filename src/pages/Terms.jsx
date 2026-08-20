@@ -88,7 +88,7 @@ export default function Terms() {
             <h2 className="text-xl sm:text-2xl font-bold text-ink font-display">5. Payment Terms</h2>
             <div className="space-y-3 pl-2 border-l-2 border-divider">
               <p>
-                <strong>5.1 Fees.</strong> As set out in the applicable Order or published on our website (e.g., GiGi at $299/month), in USD, GBP, or CHF as applicable.
+                <strong>5.1 Fees.</strong> As set out in the applicable Order or published on our website (e.g., GiGi at $250/month), in USD, GBP, or CHF as applicable.
               </p>
               <p>
                 <strong>5.2 Billing.</strong> Fees are billed in advance on a recurring basis via Stripe and Wise. Providing payment details authorizes us to charge the applicable fees.
