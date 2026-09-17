@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Shield } from 'lucide-react'
 
@@ -185,7 +184,7 @@ export default function PrivacyPolicy() {
               <li><strong>Transcription:</strong> Call recordings may be transcribed, and summaries may be generated, to support service delivery, quality assurance, and troubleshooting.</li>
               <li>
                 <strong>Retention periods:</strong>
-                <ul className="list-circle pl-6 space-y-1 mt-1">
+                <ul className="list-[circle] pl-6 space-y-1 mt-1">
                   <li>Voice recordings: retained for <strong>30 days</strong></li>
                   <li>Transcripts: retained for <strong>90 days</strong></li>
                   <li>AI-generated summaries: retained for <strong>90 days</strong></li>

@@ -33,6 +33,8 @@ export default {
         'pulse-slow': 'pulse 3s ease-in-out infinite',
         'blink': 'blink 1s step-end infinite',
         'float': 'float 6s ease-in-out infinite',
+        'fadeIn': 'fadeIn 0.5s ease-out both',
+        'fade-up': 'fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both',
       },
       keyframes: {
         blink: {
@@ -42,6 +44,14 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-8px)' },
+        },
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(24px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

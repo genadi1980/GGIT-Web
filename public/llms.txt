@@ -1,0 +1,42 @@
+# GGIT — GiGi, the 24/7 AI Voice Receptionist for Dental Clinics
+
+> GGIT (Global Group Intelligence Technologies Ltd) builds GiGi, an AI voice receptionist for dental clinics in the United States, United Kingdom and Switzerland. GiGi answers every patient call 24/7, books appointments directly into dental practice management software (e.g. Dentrix, Open Dental), answers clinic FAQs and runs patient recall campaigns.
+
+## Product: GiGi AI Voice Receptionist
+
+- 24/7/365 AI call answering on the first ring, with unlimited simultaneous calls (no busy signals or voicemail)
+- Books appointments during the call by checking live slots in the clinic's practice management software (PMS), then sends an SMS confirmation
+- Answers clinic FAQs: accepted insurance, pricing, parking, pre- and post-operative care
+- Outbound recall campaigns to reactivate past patients and fill last-minute cancellations
+- Full call transcripts and summaries
+- Identifies itself as an AI at the start of every call
+- Done-for-you setup in under 7 days: the clinic forwards calls from its existing phone line; no hardware or staff training needed
+- Built for US HIPAA, UK GDPR and Swiss FADP requirements; GGIT signs a Business Associate Agreement (BAA) with HIPAA-covered practices before activation
+- Data retention: voice recordings 30 days, transcripts and summaries 90 days
+
+## Pricing
+
+- United States: $250 per month
+- United Kingdom: £249 per month
+- Switzerland: CHF 279 per month
+- Cancel anytime
+
+## Try it
+
+- Call GiGi live: +1 (803) 982-3119
+- Book a free demo walkthrough: https://calendar.app.google/jShLVgGnrGSahVDn7
+
+## Pages
+
+- [Home](https://www.ggit.ai/): Product overview, how it works, lost-revenue calculator, FAQ and contact
+- [Pricing & Payments](https://www.ggit.ai/payments): Subscription plans by region and secure Stripe checkout
+- [Privacy Policy](https://www.ggit.ai/privacy): Data collection, AI processing, retention and data subject rights
+- [Terms of Service](https://www.ggit.ai/terms): B2B terms, payment terms and AI-specific terms
+
+## Company
+
+- Legal name: Global Group Intelligence Technologies Ltd
+- Company number: 17355071 (registered in England & Wales)
+- Registered address: 41 Rowan Court, Peter Street, Folkestone, England, CT20 1JE
+- Email: info@ggit.ai
+- Phone: +1 (803) 982-3119

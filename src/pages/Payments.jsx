@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, CreditCard, Check, ShieldCheck, Lock, Sparkles, AlertCircle } from 'lucide-react'
+
+// Links are validated in the click handlers — mock/placeholder values show a notice instead of redirecting
+const isUsableLink = (link) => Boolean(link) && !link.includes('mock_') && !link.includes('placeholder')
 
 export default function Payments() {
   const [selectedRegion, setSelectedRegion] = useState('US')
@@ -82,22 +85,14 @@ export default function Payments() {
     'Full call transcripts & smart actionable CRM summaries'
   ]
 
-  const handleSubscribe = (e) => {
-    if (!activePlan.link || activePlan.link.includes('mock_') || activePlan.link.includes('placeholder')) {
-      e.preventDefault()
-      setShowWarning(true)
-    } else {
-      window.location.href = activePlan.link
-    }
+  const handleSubscribe = () => {
+    if (isUsableLink(activePlan.link)) window.location.href = activePlan.link
+    else setShowWarning(true)
   }
 
-  const handleVerifyPayment = (e) => {
-    if (!activeVerifyPlan.link || activeVerifyPlan.link.includes('mock_') || activeVerifyPlan.link.includes('placeholder')) {
-      e.preventDefault()
-      setShowVerifyWarning(true)
-    } else {
-      window.location.href = activeVerifyPlan.link
-    }
+  const handleVerifyPayment = () => {
+    if (isUsableLink(activeVerifyPlan.link)) window.location.href = activeVerifyPlan.link
+    else setShowVerifyWarning(true)
   }
 
   return (
@@ -118,8 +113,10 @@ export default function Payments() {
           <div className="flex items-center gap-3.5">
             {/* Enlarged circular brand logo paired next to bold capital brand name text */}
             <img 
-              src="/logo.png" 
-              alt="GGIT Logo" 
+              src="/logo-160.webp"
+              alt="GGIT logo"
+              width="64"
+              height="64"
               className="h-16 w-16 object-cover rounded-full bg-white p-1 border border-divider shadow-md"
             />
             <div>
@@ -148,7 +145,7 @@ export default function Payments() {
                   <Sparkles size={20} />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold tracking-tight text-ink font-display">GiGi AI Voice Assistant</h2>
+                  <h1 className="text-xl font-bold tracking-tight text-ink font-display">GiGi AI Voice Assistant — Subscription</h1>
                   <p className="text-xs text-muted">Complete Digital Reception & Automations Suite</p>
                 </div>
               </div>
@@ -262,13 +259,22 @@ export default function Payments() {
                   <AlertCircle size={20} className="shrink-0" />
                   <h4 className="font-bold text-sm font-display">Stripe Link Configuration Required</h4>
                 </div>
-                <p className="text-xs leading-relaxed text-amber-800">
-                  This checkout is correctly integrated with environment variables. However, the Stripe Payment Link for <strong>{activePlan.label}</strong> (<code>VITE_STRIPE_PAYMENT_LINK_{selectedRegion}</code>) has not been set yet.
-                </p>
-                <div className="text-[11px] font-mono bg-white/60 p-2.5 rounded-lg border border-amber-500/10 text-amber-900 overflow-x-auto">
-                  To set this up, add the following to your <code>.env.local</code> file or production environment:<br />
-                  <span className="font-bold mt-1 block">VITE_STRIPE_PAYMENT_LINK_{selectedRegion}=https://buy.stripe.com/your_actual_link</span>
-                </div>
+                {import.meta.env.DEV ? (
+                  <>
+                    <p className="text-xs leading-relaxed text-amber-800">
+                      The Stripe Payment Link for <strong>{activePlan.label}</strong> (<code>VITE_STRIPE_PAYMENT_LINK_{selectedRegion}</code>) has not been set yet.
+                    </p>
+                    <div className="text-[11px] font-mono bg-white/60 p-2.5 rounded-lg border border-amber-500/10 text-amber-900 overflow-x-auto">
+                      Add the following to your <code>.env.local</code> file or production environment:<br />
+                      <span className="font-bold mt-1 block">VITE_STRIPE_PAYMENT_LINK_{selectedRegion}=https://buy.stripe.com/your_actual_link</span>
+                    </div>
+                  </>
+                ) : (
+                  <p className="text-xs leading-relaxed text-amber-800">
+                    Online checkout for <strong>{activePlan.label}</strong> is temporarily unavailable. Please email{' '}
+                    <a href="mailto:info@ggit.ai?subject=Subscription%20Request" className="font-bold underline">info@ggit.ai</a> and we will send you a secure payment link.
+                  </p>
+                )}
               </div>
             )}
 
@@ -432,13 +438,22 @@ export default function Payments() {
                     <AlertCircle size={20} className="shrink-0" />
                     <h4 className="font-bold text-sm font-display">Stripe Verification Link Required</h4>
                   </div>
-                  <p className="text-xs leading-relaxed text-amber-800">
-                    The micro-transaction link for <strong>{activeVerifyPlan.label} ({activeVerifyPlan.currency})</strong> (<code>VITE_STRIPE_VERIFY_LINK_{activeVerifyPlan.id}</code>) has not been set in your environment variables.
-                  </p>
-                  <div className="text-[11px] font-mono bg-white/60 p-2.5 rounded-lg border border-amber-500/10 text-amber-900 overflow-x-auto">
-                    To configure this link, add the following to your <code>.env.local</code> file or production environment:<br />
-                    <span className="font-bold mt-1 block">VITE_STRIPE_VERIFY_LINK_{activeVerifyPlan.id}=https://buy.stripe.com/your_verification_link</span>
-                  </div>
+                  {import.meta.env.DEV ? (
+                    <>
+                      <p className="text-xs leading-relaxed text-amber-800">
+                        The micro-transaction link for <strong>{activeVerifyPlan.label} ({activeVerifyPlan.currency})</strong> (<code>VITE_STRIPE_VERIFY_LINK_{activeVerifyPlan.id}</code>) has not been set in your environment variables.
+                      </p>
+                      <div className="text-[11px] font-mono bg-white/60 p-2.5 rounded-lg border border-amber-500/10 text-amber-900 overflow-x-auto">
+                        Add the following to your <code>.env.local</code> file or production environment:<br />
+                        <span className="font-bold mt-1 block">VITE_STRIPE_VERIFY_LINK_{activeVerifyPlan.id}=https://buy.stripe.com/your_verification_link</span>
+                      </div>
+                    </>
+                  ) : (
+                    <p className="text-xs leading-relaxed text-amber-800">
+                      Card verification in <strong>{activeVerifyPlan.currency}</strong> is temporarily unavailable. Please email{' '}
+                      <a href="mailto:info@ggit.ai?subject=Card%20Verification%20Request" className="font-bold underline">info@ggit.ai</a> for assistance.
+                    </p>
+                  )}
                 </div>
               )}
 
