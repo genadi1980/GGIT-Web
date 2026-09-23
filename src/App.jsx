@@ -609,7 +609,7 @@ export default function App() {
 
             <div className="glass rounded-3xl p-2 max-w-4xl mx-auto border border-divider shadow-xl overflow-hidden bg-white/50">
               <iframe
-                src="https://buildmyagent.io/shared/s4CVIQRME2?embed=true"
+                src="https://ggit-agents.vercel.app/chat/ggit-advy4?embed=1"
                 width="100%"
                 height="500"
                 className="rounded-2xl bg-white"
